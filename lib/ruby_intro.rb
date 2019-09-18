@@ -59,7 +59,7 @@ end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
-  return (s =~ /[bcdfghjklmnpqrstvwxyz]/i) == 0
+  return  /^[^aeiou\W]/i.match(s) != nil
 end
 
 def binary_multiple_of_4? s
@@ -87,20 +87,20 @@ class BookInStock
     @price = price
   end
   
+  def price
+    @price
+  end
+  
+  def price=(new_price)
+    @price = new_price
+  end
+  
   def isbn
     @isbn
   end
 
-  def price
-    @price
-  end
-
   def isbn=(new_isbn)
     @isbn = new_isbn
-  end
-
-  def price=(new_price)
-    @price = new_price
   end
 
   def price_as_string
